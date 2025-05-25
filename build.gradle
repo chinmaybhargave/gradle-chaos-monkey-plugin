@@ -1,0 +1,23 @@
+plugins {
+    id 'groovy'
+    id 'maven-publish'
+    id 'java-gradle-plugin'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+}
+
+gradlePlugin {
+    plugins {
+        chaosMonkeyPlugin {
+            id = 'com.example.chaos-monkey-plugin'
+            implementationClass = 'com.example.ChaosMonkeyPlugin'
+        }
+    }
+}
